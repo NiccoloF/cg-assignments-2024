@@ -41,6 +41,7 @@ void SetTransform(A02 *A) {
 	A->SetMatrix(1,  M, false);
 
 	// FROM THIS POINT ON, you have to find the correct transform to solve the puzzle.
+
 	M = glm::translate(glm::mat4(1.0f),glm::vec3(-6.0f,0.0f,-3.0f)) *
       glm::scale(glm::mat4(1.0f),glm::vec3(3.0f));
 	A->SetMatrix(2,  M, false);
@@ -69,7 +70,6 @@ void SetTransform(A02 *A) {
 	Sxy[2][0] = -2.0f;
 	M = glm::scale(glm::mat4(1.0f),glm::vec3(-1.0f,1.0f,1.0f)) * Sxy *
 			glm::translate(glm::mat4(1.0f),glm::vec3(-0.3333f,2.0f,0.3333f));
-  //M = glm::inverse(glm::mat4(0.333333, 0, 0.666667, 0, 0, 1, 0, 0, -0.666667, 0, -0.333333, 0, 0.333333, -2, -0.333333, 1));
 	A->SetMatrix(8,  M, false);
 
 	M = glm::mat4(1.0f);
