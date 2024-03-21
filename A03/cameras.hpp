@@ -58,8 +58,8 @@ void SetProjections(A03 *A) {
 	A->SetMatrix(2,  M);
 
 	// Trimetric, with an angle of alpha of 30 degree, and beta of 60 degrees
-  Ry = glm::rotate(glm::mat4(1.0f),glm::radians(30.0f),glm::vec3(0.0f,1.0f,0.0f));
-  Rx = glm::rotate(glm::mat4(1.0f),glm::radians(60.0f),glm::vec3(1.0f,0.0f,0.0f));
+  Ry = glm::rotate(glm::mat4(1.0f),glm::radians(60.0f),glm::vec3(0.0f,1.0f,0.0f));
+  Rx = glm::rotate(glm::mat4(1.0f),glm::radians(30.0f),glm::vec3(1.0f,0.0f,0.0f));
   M = glm::mat4(1.0f / 20.0f,0,0,0,  0,-4.0f / 60.f,0,0,   0,0,1.0f/(-500.0f-500.0f),0, 0,0,-500.0f/(-500.0f-500.0f),1)
       * Rx * Ry;
 	A->SetMatrix(3,  M);
