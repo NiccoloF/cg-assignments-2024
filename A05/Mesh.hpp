@@ -125,11 +125,11 @@ void MakeCone(float radius, float height, int slices, std::vector<glm::vec3> &ve
     vertices.resize(slices+2);
     indices.resize(6*slices);
 
-    vertices[slices]= {0.0f,0.0f,0.0f};
-    vertices[slices+1]= {0.0f,height,0.0f};
+    vertices[slices]= {0.0f,-height/2.0f,0.0f};
+    vertices[slices+1]= {0.0f,height/2.0f,0.0f};
     for(int i = 0; i < slices; i++) {
       float ang = 2*M_PI * (float)i / (float)slices;
-      vertices[i] = glm::vec3(radius * cos(ang),0.0f,radius * sin(ang));
+      vertices[i] = glm::vec3(radius * cos(ang),-height/2.0f,radius * sin(ang));
       indices[3*i  ] = slices;
       indices[3*i+1] = i;
       indices[3*i+2] = (i+1) % slices;
